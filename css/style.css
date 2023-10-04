@@ -1,0 +1,264 @@
+:root {
+/* ### Primary */
+
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+
+/* ### Neutral */
+
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+
+/* ## Typography */
+    
+    --size-paragraph: 15px;
+    
+/* ### Font */
+    
+    --Weight-400: 400;
+    --Weight-700: 700;
+    --Weight-800: 800;
+}
+
+*, ::before, ::after {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--Dark-grayish-blue);
+    transition:ease .3s ;
+}
+p {
+    font-size: var(--size-paragraph);
+    color: var(--Dark-grayish-blue);
+}
+h1, h2, h3 {
+    color: var(--Very-dark-blue);
+}
+.container {
+    padding: 0 8rem;
+    max-width:1440px;
+    margin: auto;
+}
+.container header {
+    margin: 4rem 0 2.2rem;
+}
+.container header nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container header nav .menu-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+.container header nav .phone-menu {
+    display: none;
+}
+.phone-menu-close {
+    display: none;
+}
+header nav .menu-list .menu-link {
+    margin: 0 1.6rem;
+}
+header nav .menu-list .menu-link a:hover {
+    color: var(--Soft-red);
+}
+
+main .cards {
+    display: flex;
+    justify-content: space-between;
+}
+main .cards .card-70 {
+    flex: 70%;
+    margin-right: 2rem;
+}
+main .cards .card-70 .img-box {
+    width: 100%;
+    overflow: hidden;
+}
+.cards .card-70 .img-box img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.cards .card-70 .head {
+    display: flex;
+    margin-top: 1.6rem;
+}
+.cards .card-70 .head h1 {
+    font-size: 3.8rem;
+    font-weight: var(--Weight-800);
+    line-height: 55px;
+    width: 100%;
+}
+.cards .card-70 .head div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.cards .card-70 .head div p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+.cards .card-70 .head div button {
+    width: 60%;
+    background-color: var(--Very-dark-blue);
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    color: var(--Off-white);
+    font-weight: var(--Weight-700);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: auto;
+    cursor: pointer;
+    transition: linear .3s;
+}
+.cards .card-70 .head div button:hover {
+    background-color: var(--Soft-red);
+}
+main .cards .card-30 {
+    flex: 30%;
+    background-color: var(--Off-white);
+}
+main .card .card-containe {
+    background-color: var(--Very-dark-blue);
+    padding: 2rem 1rem 0;
+    height: 100%;
+}
+main .card .card-containe h1 {
+    color: var(--Soft-orange);
+}
+main .card .card-containe .article {
+    border-bottom: 1px solid var(--Dark-grayish-blue);
+    padding-bottom: 1.8rem;
+}
+main .card .card-containe .article:last-child {
+    border-bottom: none;
+}
+main .card .card-containe .article h3 {
+    color: var(--Off-white);
+    margin-bottom: .8rem;
+    padding-top: 1.8rem;
+    cursor: pointer;
+    transition: linear .3s;
+}
+main .card .card-containe .article h3:hover {
+    color: var(--Soft-orange);
+}
+
+main .mini-cards {
+    display: flex;
+    margin: 4rem 0;
+}
+main .mini-cards .card {
+    display: flex;
+}
+main .mini-cards .card img {
+    height: 120px;
+}
+main .mini-cards .card .content {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main .mini-cards .card .content span {
+    font-size: 2.5rem;
+    color: var(--Grayish-blue);
+    font-weight: var(--Weight-400);
+}
+main .mini-cards .card .content h4 {
+    font-weight: var(--Weight-800);
+    font-size: 16px;
+    cursor: pointer;
+    transition: linear .3s;
+}
+main .mini-cards .card .content h4:hover {
+    color: var(--Soft-red);
+}
+
+@media screen and (max-width:500px) {
+    .container {
+        padding:0 1rem;
+    }
+    .container header {
+        margin-top: 2rem;
+    }
+    .container header nav .menu-list {
+        transform: translateX(100%);
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 70%;
+        height: 100%;
+        background-color: var(--Off-white);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 50%;
+        padding-left: 10%;
+        transition: all .5s;
+    }
+    .phone-menu-close {
+        display: block;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        cursor: pointer;
+    }
+    .container header nav .menu-list .menu-link {
+        margin: 1rem 0;
+    }
+    .container header nav .menu-list .menu-link a {
+        color: var(--Very-dark-blue);
+        font-size: 20px;
+        font-weight: var(--Weight-700)
+    }
+    .container header nav .menu-list .menu-link a:hover {
+        color: var(--Soft-red);
+        
+    }
+    .container header nav .phone-menu {
+        display: block;
+        cursor: pointer;
+    }
+    main .cards {
+        flex-direction: column;
+    }
+    main .cards .card-70 {
+        margin: 0;
+    }
+    main .cards .card-70 .img-box img{
+        src: url(images/image-web-3-mobile.jpg);
+    }
+    .cards .card-70 .head {
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+    .cards .card-70 .head h1 {
+        font-size: 2.5rem;
+        line-height: 1;
+        margin-bottom: 1rem;
+    }
+    .cards .card-70 .head p {
+        margin-bottom: 1rem;
+    }
+    .cards .card-70 .head div button {
+        width: 70%;
+    }
+    main .mini-cards {
+        flex-direction: column;
+    }
+    main .mini-cards .card {
+        margin: 1rem 0;
+    }
+}
